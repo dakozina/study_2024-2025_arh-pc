@@ -23,7 +23,7 @@ PDF_BIB_OPTIONS = --citeproc
 # PDF_BIB_OPTIONS = --biblatex
 
 %.docx: %.md
-	-pandoc "$<" $(FILTERS) $(OPTIONS) $(BIB_OPTIONS) -o "$@"
+	-pandoc "$<" $(FILTERS) -o "$@"
 
 %.pdf: %.md
 	-pandoc "$<" $(FILTERS) $(PDF_ENGINE) $(PDF_OPTIONS) $(PDF_BIB_OPTIONS) $(FORMAT_OPTIONS) $(OPTIONS) -o "$@"
@@ -34,4 +34,4 @@ all: $(FILES)
 clean:
 	-rm $(FILES) *~
 
-cleanall: clean
+
